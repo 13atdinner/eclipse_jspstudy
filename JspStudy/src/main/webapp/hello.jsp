@@ -26,7 +26,7 @@
 	*/
 		// System.out.println	: 콘솔에 출력(에러를 잡기위해 변수값 출력)
 		// out.println			: 화면에 출력							-> 서버에서 실행된다
-		String str="홍길동";
+		String str="김길동";
 		System.out.println("str = "+str);
 		out.println("<h1>"+"str="+str+"</h1>");
 	/*  
@@ -35,6 +35,8 @@
 		</script>
 	*/
 	%>
+<hr>
+str의 값 출력=<%=str %>
 </body>
 	<%
 		out.println("여러개 사용가능");
