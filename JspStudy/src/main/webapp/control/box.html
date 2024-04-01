@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+	//가로,세로를 입력했는지를 체크
+	function goBox(){
+// 	   [ 나 ]
+// 		if(document.BoxForm.tr_cnt.value==0){
+// 			alert("만들고자 하는 표의 가로(행)을 선택해주십시오");
+// 			return;
+// 		}else if(document.BoxForm.td_cnt.value==0){
+// 			alert("만들고자 하는 표의 세로(행)을 선택해주십시오");
+// 			return;
+// 		}
+// 		document.BoxForm.submit();
+	   
+// 	   [ 강사님 ]
+// 		document.BoxForm.tr_cnt.selectedIndex=0		-> select속성 사용시 선택한 값의 인덱스 번호를 얻어옴
+// 		document.BoxForm.tr_cnt.selectedIndex=0
+		/*
+			with	: 반복된 동일 객체의 요소들에 접근할 때, 반복되는 부모 객체를 적는것을 축약하기 위해 사용
+						-> 사용 권장하지 않음
+			- 형식	: with(반복될객체){뒤에 오게될 메서드 or 객체요소}
+		*/
+		with(document.BoxForm){	// document.BoxForm가 계속 붙는다고 생각하면 된다
+			if(tr_cnt.options.selectedIndex==0){
+				alert("만들고자 하는 표의 가로(행)을 선택해주십시오");
+				return;
+			}else if(td_cnt.options.selectedIndex==0){
+				alert("만들고자 하는 표의 세로(행)을 선택해주십시오");
+				return;
+			}else if((tr_cnt.options.selectedIndex!=0) && (td_cnt.options.selectedIndex!=0)){
+				submit();
+				// document.폼객체명.submit()				-> 수동으로 전송하는 방법
+				// input type="submit"					-> 자동 전송
+				// input type="button" or <a href="">	-> 수동 전송
+			}
+		}
+		
+//		[ 타인 ]
+// 		var trCnt = document.BoxForm.tr_cnt.value;
+// 		var tdCnt = document.BoxForm.td_cnt.value;
+// 		if(trCnt == "0") {
+// 			alert("만들고자 하는 표의 가로(행)을 선택해주십시오");
+// 			return false;
+// 		} else if(tdCnt == "0") {
+// 			alert("만들고자 하는 표의 세로(열)을 선택해주십시오");
+// 			return false;
+// 		}
+// 		document.BoxForm.submit();
+	}
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>표만들기</title>
+</head>
+<body>
+ <form name="BoxForm" method="post" action="box_proc.jsp">
+ 표만들기 설정<br>
+ 가로(행)
+  <select name="tr_cnt">
+      <option value="0">선택</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+  </select><br>
+  
+ 세로(열)
+  <select name="td_cnt">
+      <option value="0">선택</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+  </select><br>
+  <a href="JavaScript:goBox()">표만들기</a>
+ </form>
+</body>
+</html>
