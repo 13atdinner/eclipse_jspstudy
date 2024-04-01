@@ -7,6 +7,15 @@
 <title>jsp2번째 예제</title>
 </head>
 <body>
+	<h2>전역변수와 지역변수</h2>
+	<%
+		String var2="JSP";
+	%>
+	<%
+		String var1=var2+" Web Programming";
+	%>
+	출력할값 : <%=var1 %><br>
+	수식계산 : <%=(3+5) %>
 	<%
 	// 	int count=3;	// 스크립트릿을 나누어 작성해도 가능
 	%>
