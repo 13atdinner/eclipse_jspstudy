@@ -35,6 +35,7 @@
 		</script>
 	*/
 	%>
+	<%=str %>
 </body>
 	<%
 		out.println("여러개 사용가능");
